@@ -1,0 +1,62 @@
+<script>
+  function ajax(url, callback) {
+    const req = new XMLHttpRequest();
+    req.onload = function reqComplete() {
+      callback(null, JSON.parse(req.responseText));
+    };
+    req.onerror = (err) => {
+      callback(err);
+    };
+    req.open("GET", url);
+    req.send();
+  }
+
+  let firstUrl = "http://www.bluesuncorp.co.uk/cgi-bin/people.cgi";
+  let secondUrl = "http://www.bluesuncorp.co.uk/cgi-bin/places.cgi";
+
+  //   ajax(firstUrl, (err, response) => {
+  //     if (err) {
+  //       console.error(err);
+  //     } else {
+  //       console.log(response);
+  //       ajax(secondUrl, (err2, response2) => {
+  //         if (err2) {
+  //           console.error(err2);
+  //         } else {
+  //           console.log(response2);
+  //         }
+  //       });
+  //     }
+  //   });
+  //
+
+  ajax(firstUrl, (err, response) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log(response);
+    }
+  });
+  ajax(secondUrl, (err, response) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log(response);
+    }
+  });
+
+  fetch(firstUrl)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+    });
+  fetch(secondUrl)
+    .then((response2) => {
+      return response2.json();
+    })
+    .then((data) => {
+      console.log(data);
+    });
+</script>
