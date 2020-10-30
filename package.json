@@ -1,0 +1,22 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "This file does nothing. Do not expect it to do something.",
+  "main": "arrayfind.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaidaw/Algorithms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaidaw/Algorithms/issues"
+  },
+  "homepage": "https://github.com/kaidaw/Algorithms#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
